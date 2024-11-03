@@ -1,4 +1,4 @@
-package server
+package web
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 
 func TestServer(t *testing.T) {
 	server := http.Server{
-		Addr:    "localhost:8080",
+		Addr: "localhost:8080",
 		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			fmt.Fprint(w, "Halo Ivan Adi Saputra")
 		}),
@@ -37,7 +37,7 @@ func TestServeMux(t *testing.T) {
 	})
 
 	server := http.Server{
-		Addr: "localhost:9000",
+		Addr:    "localhost:9000",
 		Handler: mux,
 	}
 	err := server.ListenAndServe()
@@ -46,7 +46,6 @@ func TestServeMux(t *testing.T) {
 	}
 }
 
-
 func TestRequest(t *testing.T) {
 	var handler http.HandlerFunc = func(writer http.ResponseWriter, request *http.Request) {
 		fmt.Fprintln(writer, request.Method)
@@ -54,8 +53,8 @@ func TestRequest(t *testing.T) {
 	}
 
 	server := http.Server{
-		Addr: "localhost:8080",
-		Handler:  handler,
+		Addr:    "localhost:8080",
+		Handler: handler,
 	}
 
 	err := server.ListenAndServe()
