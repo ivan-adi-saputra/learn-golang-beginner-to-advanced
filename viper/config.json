@@ -1,0 +1,12 @@
+{
+  "app": {
+    "name": "learn-viper",
+    "version": "1.0.0",
+    "author": "Ivan Adi Saputra"
+  },
+  "database": {
+    "show_sql": true,
+    "host": "localhost",
+    "port": 3306
+  }
+}
